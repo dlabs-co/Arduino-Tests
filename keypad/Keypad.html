@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><link media="all" href="Keypad_files/widget082.css" type="text/css" rel="stylesheet">
+  <title>Arduino playground - Keypad Library </title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://arduino.cc/playground/favicon.png">
+  <link rel="stylesheet" href="Keypad_files/arduinoWide_SSO.css" type="text/css">
+  <script src="Keypad_files/sso_bar_js_2.php"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="Keypad_files/sso_bar.css">
+<!--HeaderText--><style type="text/css"><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border: 2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  td.markup1 { border-bottom: 1px solid #ccf; }
+  div.faq { margin-left:2em; }
+  div.faq p.question { margin: 1em 0 0.75em -2em; font-weight:bold; }
+  div.faq hr { margin-left: -2em; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.c  {font-family:monospace;}
+.c .imp {font-weight: bold; color: red;}
+.c .kw1 {color: #b1b100;}
+.c .kw2 {color: #000000; font-weight: bold;}
+.c .kw3 {color: #000066;}
+.c .kw4 {color: #993333;}
+.c .co1 {color: #666666; font-style: italic;}
+.c .co2 {color: #339933;}
+.c .coMULTI {color: #808080; font-style: italic;}
+.c .es0 {color: #000099; font-weight: bold;}
+.c .es1 {color: #000099; font-weight: bold;}
+.c .es2 {color: #660099; font-weight: bold;}
+.c .es3 {color: #660099; font-weight: bold;}
+.c .es4 {color: #660099; font-weight: bold;}
+.c .es5 {color: #006699; font-weight: bold;}
+.c .br0 {color: #009900;}
+.c .sy0 {color: #339933;}
+.c .st0 {color: #ff0000;}
+.c .nu0 {color: #0000dd;}
+.c .nu6 {color: #208080;}
+.c .nu8 {color: #208080;}
+.c .nu12 {color: #208080;}
+.c .nu16 {color:#800080;}
+.c .nu17 {color:#800080;}
+.c .nu18 {color:#800080;}
+.c .nu19 {color:#800080;}
+.c .me1 {color: #202020;}
+.c .me2 {color: #202020;}
+.c span.xtra { display:block; }
+
+.sourceblocklink {
+  text-align: right;
+  font-size: smaller;
+}
+.sourceblocktext {
+  padding: 0.5em;
+  color: #000000;
+  background-color: #ffffff;
+}
+.sourceblocktext div {
+  font-family: monospace;
+  font-size: small;
+  line-height: 1;
+  height: 1%;
+}
+.sourceblocktext div.head,
+.sourceblocktext div.foot {
+  font: italic medium serif;
+  padding: 0.5em;
+}
+
+--></style>
+  <link rel="stylesheet" href="Keypad_files/wsplus.css" type="text/css">
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://arduino.cc/playground/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name="robots" content="index,follow">
+
+<div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="Keypad_files/sh085.html" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0pt none; left: 0pt; top: 0pt;" title="AddThis utility frame" id="_atssh747"></iframe></div><script src="Keypad_files/core006.js" type="text/javascript"></script></head>
+<body>
+  
+		<div id="ssotoolbar">
+		  <div id="al">
+			<nobr><div id="ssoNavBar"><a class="t0" href="http://arduino.cc/en/">Main Site</a> <a class="t0" href="http://arduino.cc/blog/">Blog</a> <a class="t1" href="http://arduino.cc/playground/">Playground</a> <a class="t0" href="http://arduino.cc/forum/">Forum</a> <a class="t0" href="http://labs.arduino.cc/">Labs</a> <a class="t0" href="http://store.arduino.cc/ww/">Store</a> </div></nobr>
+		  </div>
+		  <div id="ar">
+			<nobr>
+			  <div id="loginInfo"><div class="lo gh"><a class="t0" href="http://arduino.cc/help/">Help</a></div> <div class="lo sep">|</div> <div class="lo"><a href="https://id.arduino.cc/auth/login/?returnurl=http%3A%2F%2Farduino.cc%2Fplayground%2FMain%2FKeypadTutorial">Sign in</a> or <a href="https://id.arduino.cc/auth/register/?returnurl=http%3A%2F%2Farduino.cc%2Fplayground%2FMain%2FKeypadTutorial">Register</a></div></div>
+			</nobr>
+		  </div>
+		</div>
+		<script>ssoGenerateNavigationBar('');</script>
+<div id="page">
+<!--PageHeaderFmt-->
+<div id="pageheader">
+  <div class="title"><a href="http://www.arduino.cc/"><div id="logo"></div></a> <a href="http://arduino.cc/playground"><div id="logo_tagline"></div></a></div>
+  <div class="search">
+    <!-- SiteSearch Google -->
+    <form method="GET" action="http://www.google.com/search">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input name="oe" value="UTF-8" type="hidden">
+    <input name="q" size="25" maxlength="255" type="text">
+    <input name="btnG" value="search" type="submit">
+    <input name="domains" value="http://arduino.cc/playground" type="hidden">
+    <input name="sitesearch" value="http://arduino.cc/playground" type="hidden">
+    </form>
+    <!-- SiteSearch Google -->
+  </div>
+</div>
+<!--/PageHeaderFmt-->
+<!--PageLeftFmt-->
+<div id="pagenav">
+  <p><em>The <a class="wikilink" href="http://arduino.cc/playground/Main/HomePage">playground</a> is a publicly-editable wiki about <a class="urllink" href="http://www.arduino.cc/" rel="nofollow">Arduino</a>.</em>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/ManualsAndCurriculum">Manuals and Curriculum</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Learning/Linux">Installing Arduino on Linux</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/ArduinoCoreHardware">Board Setup and Configuration</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/DevelopmentTools">Development Tools</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware">Interfacing With Hardware</a>
+</p><ul><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#Output">Output</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#InputTOC">Input</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#ui">User Interface</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#Storage">Storage</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#Communication">Communication</a> 
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/IntWithHW-PwrSup">Power supplies</a> 
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#General">General</a> 
+</li></ul><p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithSoftware">Interfacing with Software</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/GeneralCodeLibrary">User Code Library</a>
+</p><ul><li><a class="wikilink" href="http://arduino.cc/playground/Main/SketchList">Snippets and Sketches</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/LibraryList">Libraries</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/TutorialList">Tutorials</a>
+</li></ul><p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://code.google.com/p/arduino/issues/list" rel="nofollow">Suggestions &amp; Bugs</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/ElectroInfoResources">Electronics Technique</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/Resources">Sources for Electronic Parts</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/SimilarBoards">Related Hardware and Initiatives</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://www.arduino.cc/playground/Main/People" rel="nofollow">Arduino People/Groups &amp; Sites</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://www.arduino.cc/playground/Projects/ArduinoUsers" rel="nofollow">Exhibition</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://www.arduino.cc/playground/Projects/Ideas" rel="nofollow">Project Ideas</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/Languages">Languages</a>
+</p>
+<p class="vspace"></p><hr>
+<p class="vspace"></p><p class="sidehead"> <a class="wikilink" href="http://arduino.cc/playground/Main/Participate">PARTICIPATE</a>
+</p><ul><li><a class="urllink" href="http://code.google.com/p/arduino/issues/list" rel="nofollow">Suggestions</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/Participate#contribrules">Formatting guidelines</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Site/AllRecentChanges">All recent changes</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/PmWiki/PmWiki">PmWiki</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/WikiSandbox">WikiSandBox training</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/PmWiki/BasicEditing">Basic Editing</a>
+</li><li><a class="urllink" href="http://www.pmwiki.org/wiki/Cookbook/CookbookBasics" rel="nofollow">Cookbook (addons)</a>
+</li><li><a class="urllink" href="http://www.pmwiki.org/wiki/PmWiki/DocumentationIndex" rel="nofollow">Documentation index</a>
+</li><li><a class="urllink" href="http://www.bartoloilliano.com/tag/arduino" rel="nofollow">Italian Tutorial</a>
+</li></ul><p class="vspace"></p><hr>
+<p style="text-align: right;"> <span style="font-size:83%"><a class="wikilink" href="http://arduino.cc/playground/Site/SideBar?action=edit">edit SideBar</a></span>
+</p>
+
+</div>
+<!--/PageLeftFmt-->
+<!--PageActionFmt-->
+<div id="pageactions">
+  <!--Code.PageActions--> <!--Site.PageActions-->
+  
+</div>
+<!--/PageActionFmt-->
+<div id="pagetext">
+  <!--PageText-->
+<div id="wikitext">
+<p>
+</p>
+<p class="vspace"></p><p>
+</p><pre style="background-color: #ffcccc; color: #000000; border: 1px dotted black; font-size: 11pt; padding: 2px;">I will be maintaining my libraries here:
+http://bit.ly/pATDBi
+
+I am the lead developer for libraries 
+that ship with the Wiring distribution. 
+As per version 1.0 -
+Wiring will support Arduino boards.
+You are welcome to check it out!
+http://wiring.org.co/download/
+</pre>
+<pre style="background-color: #eeeeee; color: #000000; border: 1px dotted black; font-size: 11pt; padding: 2px;">Keypad Library for Arduino
+Author:  Mark Stanley, Alexander Brevig
+Contact: mstanley@technologist.com, alexanderbrevig@gmail.com
+</pre>
+<p class="vspace"></p><hr>
+<h1>Navigation</h1>
+<ul><li><a href="#CurrentVersion">Current version</a>
+</li><li><a href="#History">History</a>
+</li><li><a href="#Description">Description</a>
+</li><li><a href="#Download">Download, install and import</a>
+</li><li><a href="#Creation">Creation</a>
+</li><li><a href="#Functions">Functions</a>
+</li><li><a href="#Example">Example</a>
+</li><li><a href="#FAQ">FAQ</a>
+</li><li><a href="#Information">Information about this page</a>
+</li></ul><p class="vspace"></p><hr>
+<h1><a name="CurrentVersion" id="CurrentVersion"></a>Current version</h1>
+<p>2.0 2011-12-29 - Mark Stanley : Added <a class="urllink" href="http://arduino.cc/forum/index.php?topic=58337.0" rel="nofollow">Nick Gammon's changes.</a> <br>
+</p><hr>
+<h1><a name="History" id="History"></a>History</h1>
+<p>2.0 2011-12-29 - Mark Stanley : Added waitForKey() <br>2.0 2011-12-23 - Mark Stanley : Rewrote state machine.<br>2.0 2011-12-23 - Mark Stanley : Significant speed improvements.<br>1.8 2011-11-29 - Tom Putzeys : Enabled internal pull-ups on non-active columns<br>1.8 2011-11-21 - Mark Stanley     : Added test for version 1.0 of the IDE <br>1.8 2009-07-08 - Alexander Brevig : Added no restrictions on sizes or keymaps<br>1.8 2009-07-08 - Alexander Brevig : Added no restrictions on sizes or keymaps<br>1.7 2009-06-18 - Alexander Brevig : Added setDebounceTime()<br>1.6 2009-06-13 - Mark Stanley : getKey() bug fixes<br>1.5 2009-05-19 - Alexander Brevig : Added setHoldTime()<br>1.4 2009-05-15 - Alexander Brevig : Added addEventListener()<br>1.3 2009-05-12 - Alexander Brevig : Added debouncing<br>1.2 2009-05-09: Changed getKey()<br>1.1 2009-03-12: Initial Release, NEW Library<br>1.0 2007: Initial Release<br>
+</p><hr>
+<h1><a name="Description" id="Description"></a>Description</h1>
+<div style="text-align: center;"><img src="Keypad_files/16buttonkeypad.jpg" alt="" title=""></div>
+<p class="vspace"></p><p><strong>Keypad</strong> is a library for using <em>matrix</em> style keypads with the Arduino.
+</p>
+<p class="vspace"></p><p>This library is based upon the <a class="wikilink" href="http://arduino.cc/playground/Main/KeypadTutorial">Keypad Tutorial</a> code.
+</p>
+<p class="vspace"></p><p>It was created to promote Hardware Abstraction.
+ It improves readability of the code by hiding the pinMode and 
+digitalRead calls for the user.
+</p>
+<p class="vspace"></p><p><strong>Keypad</strong> library is part of the <a class="wikilink" href="http://arduino.cc/playground/Code/HardwareAbstraction">Hardware Abstraction</a> libraries. <br><br>
+Version 2.0 has just been posted (28 Dec. 2011) and includes a major 
+rewrite of the state machine for reading keys. Also, attention was given
+ to the speed of operation of this driver because the old keypad driver 
+caused the number of loop()s per second to be around 4000. And that was 
+before ever pressing a key. Version 2.0 brought that number up over 
+40,000 per second and removed any slowdowns caused when pressing a key.
+</p>
+<p class="vspace"></p><p>Since version 1.8 no external diodes or 
+resistors are needed because there is only one column pin driven low at 
+any time and all the other pins are set as inputs with their internal 
+pull-ups enabled. Setting only one pin as an output is also more 
+eco-friendly as it consumes less power.
+</p>
+<p class="vspace"></p><hr>
+<h1><a name="Download" id="Download"></a>Download, install and import</h1>
+<p>Download here: <a class="urllink" href="http://arduino.cc/playground/uploads/Code/keypad.zip" rel="nofollow">keypad.zip</a>
+</p>
+<p class="vspace"></p><p>Put the Keypad folder in "<em>arduino</em>\libraries\".<br>In the Arduino IDE, create a new sketch (or open one) and select from the menubar "Sketch -&gt; Import Library -&gt; Keypad".<br>Once the library is imported, an "#include &lt;Keypad.h&gt;" line will appear at the top of your Sketch.
+</p>
+<p class="vspace"></p><hr>
+<h1><a name="Creation" id="Creation"></a>Creation</h1>
+<p>Constructors:
+</p><ol><li>Keypad(makeKeymap(userKeymap), row[], col[], rows, cols)
+</li></ol><p class="vspace"></p><pre style="background-color: #dddddd; border: 2px dotted white;">const byte rows = 4; //four rows
+const byte cols = 3; //three columns
+char keys[rows][cols] = {
+  {'1','2','3'},
+  {'4','5','6'},
+  {'7','8','9'},
+  {'#','0','*'}
+};
+byte rowPins[rows] = {5, 4, 3, 2}; //connect to the row pinouts of the keypad
+byte colPins[cols] = {8, 7, 6}; //connect to the column pinouts of the keypad
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, rows, cols );
+</pre>
+<p class="vspace"></p><p>Instantiates a Keypad object that uses pins 5, 4, 3, 2 as row pins, and 8, 7, 6 as column pins.<br>This keypad has 4 rows and 3 columns, resulting in 12 keys.
+</p>
+<p class="vspace"></p><hr>
+<h1><a name="Functions" id="Functions"></a>Functions</h1>
+<h2>void begin()</h2>
+<p>Initialize all variables<br>The constructor does this for you.
+</p>
+<p class="vspace"></p><h2>void begin(makeKeymap(userKeymap))</h2>
+<p>Initializes the internal keymap to be equal to userKeymap<br>[See File -&gt; Examples -&gt; Keypad -&gt; Examples -&gt; <span class="wikiword">CustomKeypad</span>]<br>
+</p><h2>char waitForKey()</h2>
+<p>This function will wait forever until someone presses a key. <strong>Warning:</strong>
+ It blocks all other code until a key is pressed. That means no blinking
+ LED's, no LCD screen updates, no nothing with the exception of 
+interrupt routines. 
+</p>
+<p class="vspace"></p><h2>char getKey()</h2>
+<p>Returns the key that is pressed, if any. This function is non-blocking.
+</p>
+<p class="vspace"></p><h2><span class="wikiword">KeyState</span> getState()</h2>
+<p>Returns the current state of any of the keys.<br>The four states are IDLE, PRESSED, RELEASED and HOLD.
+</p>
+<p class="vspace"></p><h2>boolean keyStateChanged()</h2>
+<p>New in version 2.0:  Let's you know when the key has changed from one
+ state to another. For example, instead of just testing for a valid key 
+you can test for when a key was pressed.
+</p>
+<p class="vspace"></p><h2>setHoldTime(unsigned int time)</h2>
+<p>Set the amount of milliseconds the user will have to hold a button until the HOLD state is triggered.
+</p>
+<p class="vspace"></p><h2>setDebounceTime(unsigned int time)</h2>
+<p>Set the amount of milliseconds the keypad will wait until it accepts a
+ new keypress/keyEvent. This is the "time delay" debounce method.
+</p>
+<p class="vspace"></p><h2>addEventListener(keypadEvent)</h2>
+<p>Trigger an event if the keypad is used.  You can load an example in the Arduino IDE.<br>[See File -&gt; Examples -&gt; Keypad -&gt; Examples -&gt; <span class="wikiword">EventSerialKeypad</span>] or see the <a class="wikilink" href="http://arduino.cc/playground/KeypadTutorial/EventKeypad">KeypadEvent Example</a> code.<br>
+</p><hr>
+<h1><a name="Example" id="Example"></a>Example</h1>
+<p>
+</p><div class="sourceblock " id="sourceblock1">
+  <div class="sourceblocktext"><div class="c"><span class="co2">#include &lt;Keypad.h&gt;</span><br>
+<br>
+<span class="kw4">const</span> byte ROWS <span class="sy0">=</span> <span class="nu0">4</span><span class="sy0">;</span> <span class="co1">//four rows</span><br>
+<span class="kw4">const</span> byte COLS <span class="sy0">=</span> <span class="nu0">3</span><span class="sy0">;</span> <span class="co1">//three columns</span><br>
+<span class="kw4">char</span> keys<span class="br0">[</span>ROWS<span class="br0">]</span><span class="br0">[</span>COLS<span class="br0">]</span> <span class="sy0">=</span> <span class="br0">{</span><br>
+&nbsp; <span class="br0">{</span><span class="st0">'1'</span><span class="sy0">,</span><span class="st0">'2'</span><span class="sy0">,</span><span class="st0">'3'</span><span class="br0">}</span><span class="sy0">,</span><br>
+&nbsp; <span class="br0">{</span><span class="st0">'4'</span><span class="sy0">,</span><span class="st0">'5'</span><span class="sy0">,</span><span class="st0">'6'</span><span class="br0">}</span><span class="sy0">,</span><br>
+&nbsp; <span class="br0">{</span><span class="st0">'7'</span><span class="sy0">,</span><span class="st0">'8'</span><span class="sy0">,</span><span class="st0">'9'</span><span class="br0">}</span><span class="sy0">,</span><br>
+&nbsp; <span class="br0">{</span><span class="st0">'#'</span><span class="sy0">,</span><span class="st0">'0'</span><span class="sy0">,</span><span class="st0">'*'</span><span class="br0">}</span><br>
+<span class="br0">}</span><span class="sy0">;</span><br>
+byte rowPins<span class="br0">[</span>ROWS<span class="br0">]</span> <span class="sy0">=</span> <span class="br0">{</span><span class="nu0">5</span><span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">2</span><span class="br0">}</span><span class="sy0">;</span> <span class="co1">//connect to the row pinouts of the keypad</span><br>
+byte colPins<span class="br0">[</span>COLS<span class="br0">]</span> <span class="sy0">=</span> <span class="br0">{</span><span class="nu0">8</span><span class="sy0">,</span> <span class="nu0">7</span><span class="sy0">,</span> <span class="nu0">6</span><span class="br0">}</span><span class="sy0">;</span> <span class="co1">//connect to the column pinouts of the keypad</span><br>
+<br>
+Keypad keypad <span class="sy0">=</span> Keypad<span class="br0">(</span> makeKeymap<span class="br0">(</span>keys<span class="br0">)</span><span class="sy0">,</span> rowPins<span class="sy0">,</span> colPins<span class="sy0">,</span> ROWS<span class="sy0">,</span> COLS <span class="br0">)</span><span class="sy0">;</span><br>
+<br>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span><br>
+&nbsp; Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span><br>
+&nbsp; <span class="kw4">char</span> key <span class="sy0">=</span> keypad.<span class="me1">getKey</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span><br>
+<br>
+&nbsp; <span class="kw1">if</span> <span class="br0">(</span>key <span class="sy0">!=</span> NO_KEY<span class="br0">)</span><span class="br0">{</span><br>
+&nbsp; &nbsp; Serial.<span class="me1">println</span><span class="br0">(</span>key<span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span></div></div>
+  <div class="sourceblocklink"><a href="http://arduino.cc/playground/Code/Keypad?action=sourceblock&amp;num=1" type="text/plain">[Get Code]</a></div>
+</div>
+
+<p></p>
+<p class="vspace"></p><hr>
+<h1><a name="FAQ" id="FAQ"></a>FAQ</h1>
+<ul style="background-color: #dddddd; border: 2px dotted white;"><li style="background-color: #dddddd; border: 2px dotted white;"><strong><code>How do I use multiple Keypads?</code></strong>
+</li></ul><p class="vspace"></p><p>Keypad is a class. Therefore to use multiple Keypad, you must create an instance for each of them. 
+In the example above, the Keypad instance <em>keypad</em>) was bound to the digital pins 2, 3, 4, 5, 6, 7 and 8.
+</p>
+<p class="vspace"></p><p>To add a Keypad bound to digital pins 9, 10, 11, 12, 13, 14, 15 and  16, you could create the following instance <em>keypad2</em>:
+</p>
+<p class="vspace"></p><pre style="background-color: #dddddd; border: 2px dotted white;">const byte ROWS2 = 4; //four rows
+const byte COLS2 = 4; //four columns
+char keys2[ROWS2][COLS2] = {
+  {'.','a','d','1'},
+  {'g','j','m','2'},
+  {'p','t','w','3'},
+  {'*',' ','#','4'}
+};
+byte rowPins2[ROWS2] = {12, 11, 10, 9}; //connect to the row pinouts of the keypad
+byte colPins2[COLS2] = {16, 15, 14, 13}; //connect to the column pinouts of the keypad
+
+Keypad keypad2 = Keypad( makeKeymap(keys2), rowPins2, colPins2, ROWS2, COLS2 );
+</pre>
+<p class="vspace"></p><p>And now it's just a matter of using whatever function is wanted on each keypad:
+</p><pre style="background-color: #dddddd; border: 2px dotted white;">//update instances and possibly fire funcitons
+void loop(){
+  char key1 = keypad.getKey();
+  char key2 = keypad2.getKey();
+
+  if (key1 != NO_KEY || key2 != NO_KEY){
+    Serial.print("You pressed: ");
+    Serial.print(key1 != NO_KEY ? key1 : "nothing on keypad");
+	Serial.print(" and ");
+    Serial.print(key2 != NO_KEY ? key2 : "nothing on keypad2");
+    Serial.println(".");
+  }
+}
+</pre><br>
+<ul style="background-color: #dddddd; border: 2px dotted white;"><li style="background-color: #dddddd; border: 2px dotted white;"><strong><code>How do I use setDebounceTime(unsigned int time)?</code></strong>
+</li></ul><p class="vspace"></p><p>In Arduino follow the main menu from File-&gt; Examples-&gt; Keypad-&gt; Examples-&gt; <span class="wikiword">DynamicKeypad</span>. Once the sketch is open find setup() and there you will see:
+</p>
+<p class="vspace"></p><pre style="background-color: #dddddd; border: 2px dotted white;">void setup()  {
+  Serial.begin(9600);
+  digitalWrite(ledPin, HIGH);            // Turns the LED on.
+  keypad.addEventListener(keypadEvent);  // Add an event listener.
+  keypad.setHoldTime(500);               // Default is 1000mS
+  keypad.setDebounceTime(250);           // Default is 50mS
+}
+</pre>
+<p class="vspace"></p><p>This shows that the debounce time will allow 
+one key press every 250 milliseconds.  If multiple key presses occur 
+within that time frame (as would happen when a key is bouncing) then 
+those extra presses are simply ignored.
+</p>
+<p class="vspace"></p><hr>
+<h1><a name="Information" id="Information"></a>Information about this page</h1>
+<table border="0" cellpadding="5" cellspacing="0"><tbody><tr><td colspan="2" valign="top">Part of <a class="wikilink" href="http://arduino.cc/playground/Profiles/AlphaBeta">AlphaBeta</a> Libraries.
+</td></tr><tr><td valign="top"> Last Modified: 
+</td><td valign="top"> December 31, 2011, at 08:51 PM
+</td></tr><tr><td valign="top"> By:
+</td><td valign="top"> mstanley
+</td></tr></tbody></table>
+</div>
+
+
+<!-- AddThis Button BEGIN -->       
+<script type="text/javascript">var addthis_language = "en";      
+</script>       
+<div class="addthis_container addthis_toolbox addthis_default_style" addthis:url="http://arduino.cc/playground/Code/Keypad" addthis:title="Arduino Playground">
+<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=arduinoteam" class="addthis_button_compact at300m"><span class="at16nc at300bs at15nc at15t_compact at16t_compact"><span class="at_a11y">More Sharing Services</span></span>Share</a><span class="addthis_separator">|</span><a href="#" title="Email" class="addthis_button_email at300b"><span class="at16nc at300bs at15nc at15t_email at16t_email"><span class="at_a11y">Share on email</span></span></a><a href="#" title="Save to Favorites" class="addthis_button_favorites at300b"><span class="at16nc at300bs at15nc at15t_favorites at16t_favorites"><span class="at_a11y">Share on favorites</span></span></a><a href="#" title="Print" class="addthis_button_print at300b"><span class="at16nc at300bs at15nc at15t_print at16t_print"><span class="at_a11y">Share on print</span></span></a><a href="#" title="Send to Facebook" class="addthis_button_facebook at300b"><span class="at16nc at300bs at15nc at15t_facebook at16t_facebook"><span class="at_a11y">Share on facebook</span></span></a><a href="#" title="Tweet This" class="addthis_button_twitter at300b"><span class="at16nc at300bs at15nc at15t_twitter at16t_twitter"><span class="at_a11y">Share on twitter</span></span></a><script type="text/javascript" src="Keypad_files/addthis_widget.js"></script><div class="atclear"></div></div>       
+<!-- AddThis Button END -->       
+
+
+</div>
+<!--PageFooterFmt-->
+<div id="pagefooter">
+</div>
+<!--/PageFooterFmt-->
+</div>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ?
+"https://stats.arduino.cc/piwik/" : "http://stats.arduino.cc/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Keypad_files/piwik.js" type="text/javascript"></script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img
+src="http://stats.arduino.cc/piwik/piwik.php?idsite=1" style="border:0"
+alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+
+
+
+</body></html>

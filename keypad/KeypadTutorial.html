@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><link media="all" href="KeypadTutorial_files/widget082.css" type="text/css" rel="stylesheet">
+  <title>Arduino playground - KeypadTutorial </title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://arduino.cc/playground/favicon.png">
+  <link rel="stylesheet" href="KeypadTutorial_files/arduinoWide_SSO.css" type="text/css">
+  <script src="KeypadTutorial_files/sso_bar_js_2.php"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="KeypadTutorial_files/sso_bar.css">
+<!--HeaderText--><style type="text/css"><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border: 2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  td.markup1 { border-bottom: 1px solid #ccf; }
+  div.faq { margin-left:2em; }
+  div.faq p.question { margin: 1em 0 0.75em -2em; font-weight:bold; }
+  div.faq hr { margin-left: -2em; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel="stylesheet" href="KeypadTutorial_files/wsplus.css" type="text/css">
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://arduino.cc/playground/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name="robots" content="index,follow">
+
+<div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="KeypadTutorial_files/sh085.html" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0pt none; left: 0pt; top: 0pt;" title="AddThis utility frame" id="_atssh749"></iframe></div><script src="KeypadTutorial_files/core006.js" type="text/javascript"></script></head>
+<body>
+  
+		<div id="ssotoolbar">
+		  <div id="al">
+			<nobr><div id="ssoNavBar"><a class="t0" href="http://arduino.cc/en/">Main Site</a> <a class="t0" href="http://arduino.cc/blog/">Blog</a> <a class="t1" href="http://arduino.cc/playground/">Playground</a> <a class="t0" href="http://arduino.cc/forum/">Forum</a> <a class="t0" href="http://labs.arduino.cc/">Labs</a> <a class="t0" href="http://store.arduino.cc/ww/">Store</a> </div></nobr>
+		  </div>
+		  <div id="ar">
+			<nobr>
+			  <div id="loginInfo"><div class="lo gh"><a class="t0" href="http://arduino.cc/help/">Help</a></div> <div class="lo sep">|</div> <div class="lo"><a href="https://id.arduino.cc/auth/login/?returnurl=http%3A%2F%2Farduino.cc%2Fplayground%2FMain%2FKeypadTutorial">Sign in</a> or <a href="https://id.arduino.cc/auth/register/?returnurl=http%3A%2F%2Farduino.cc%2Fplayground%2FMain%2FKeypadTutorial">Register</a></div></div>
+			</nobr>
+		  </div>
+		</div>
+		<script>ssoGenerateNavigationBar('');</script>
+<div id="page">
+<!--PageHeaderFmt-->
+<div id="pageheader">
+  <div class="title"><a href="http://arduino.cc/"><div id="logo"></div></a> <a href="http://arduino.cc/playground"><div id="logo_tagline"></div></a></div>
+  <div class="search">
+    <!-- SiteSearch Google -->
+    <form method="GET" action="http://www.google.com/search">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input name="oe" value="UTF-8" type="hidden">
+    <input name="q" size="25" maxlength="255" type="text">
+    <input name="btnG" value="search" type="submit">
+    <input name="domains" value="http://arduino.cc/playground" type="hidden">
+    <input name="sitesearch" value="http://arduino.cc/playground" type="hidden">
+    </form>
+    <!-- SiteSearch Google -->
+  </div>
+</div>
+<!--/PageHeaderFmt-->
+<!--PageLeftFmt-->
+<div id="pagenav">
+  <p><em>The <a class="wikilink" href="http://arduino.cc/playground/Main/HomePage">playground</a> is a publicly-editable wiki about <a class="urllink" href="http://www.arduino.cc/" rel="nofollow">Arduino</a>.</em>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/ManualsAndCurriculum">Manuals and Curriculum</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Learning/Linux">Installing Arduino on Linux</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/ArduinoCoreHardware">Board Setup and Configuration</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/DevelopmentTools">Development Tools</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware">Interfacing With Hardware</a>
+</p><ul><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#Output">Output</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#InputTOC">Input</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#ui">User Interface</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#Storage">Storage</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#Communication">Communication</a> 
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/IntWithHW-PwrSup">Power supplies</a> 
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithHardware#General">General</a> 
+</li></ul><p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/InterfacingWithSoftware">Interfacing with Software</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/GeneralCodeLibrary">User Code Library</a>
+</p><ul><li><a class="wikilink" href="http://arduino.cc/playground/Main/SketchList">Snippets and Sketches</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/LibraryList">Libraries</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/TutorialList">Tutorials</a>
+</li></ul><p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://code.google.com/p/arduino/issues/list" rel="nofollow">Suggestions &amp; Bugs</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/ElectroInfoResources">Electronics Technique</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/Resources">Sources for Electronic Parts</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/SimilarBoards">Related Hardware and Initiatives</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://www.arduino.cc/playground/Main/People" rel="nofollow">Arduino People/Groups &amp; Sites</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://www.arduino.cc/playground/Projects/ArduinoUsers" rel="nofollow">Exhibition</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="urllink" href="http://www.arduino.cc/playground/Projects/Ideas" rel="nofollow">Project Ideas</a>
+</p>
+<p class="vspace"></p><p class="sidehead"><a class="wikilink" href="http://arduino.cc/playground/Main/Languages">Languages</a>
+</p>
+<p class="vspace"></p><hr>
+<p class="vspace"></p><p class="sidehead"> <a class="wikilink" href="http://arduino.cc/playground/Main/Participate">PARTICIPATE</a>
+</p><ul><li><a class="urllink" href="http://code.google.com/p/arduino/issues/list" rel="nofollow">Suggestions</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/Participate#contribrules">Formatting guidelines</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Site/AllRecentChanges">All recent changes</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/PmWiki/PmWiki">PmWiki</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/Main/WikiSandbox">WikiSandBox training</a>
+</li><li><a class="wikilink" href="http://arduino.cc/playground/PmWiki/BasicEditing">Basic Editing</a>
+</li><li><a class="urllink" href="http://www.pmwiki.org/wiki/Cookbook/CookbookBasics" rel="nofollow">Cookbook (addons)</a>
+</li><li><a class="urllink" href="http://www.pmwiki.org/wiki/PmWiki/DocumentationIndex" rel="nofollow">Documentation index</a>
+</li><li><a class="urllink" href="http://www.bartoloilliano.com/tag/arduino" rel="nofollow">Italian Tutorial</a>
+</li></ul><p class="vspace"></p><hr>
+<p style="text-align: right;"> <span style="font-size:83%"><a class="wikilink" href="http://arduino.cc/playground/Site/SideBar?action=edit">edit SideBar</a></span>
+</p>
+
+</div>
+<!--/PageLeftFmt-->
+<!--PageActionFmt-->
+<div id="pageactions">
+  <!--Main.PageActions--> <!--Site.PageActions-->
+  
+</div>
+<!--/PageActionFmt-->
+<div id="pagetext">
+  <!--PageText-->
+<div id="wikitext">
+<p>Matrix Keypad library
+</p>
+<p class="vspace"></p><h1>The Matrix Keypad how-to</h1>
+<p><span style="font-size:69%">This page last updated December 28, 2011, at 04:26 PM by mstanley</span>
+</p>
+<p class="vspace"></p><h3 style="text-align: center;">This tutorial is based upon the<br><a class="wikilink" href="http://arduino.cc/playground/Code/Keypad">Matrix Keypad library</a></h3>
+<h2>Navigation</h2>
+<ul><li><a href="#What">What is it?</a>
+</li><li><a href="#Identify">Identifying the keypad pins</a>
+</li><li><a href="#Notes">Notes on using the library</a>
+</li><li><a href="#Example">Example</a>
+</li><li><a href="#Troubles">Troubleshooting</a>
+</li><li><a href="#Modifying">Modifying the library</a>
+</li></ul><p class="vspace"></p><hr>
+<h2><a name="What" id="What"></a>What is it?</h2>
+<p>The Keypad library allows your Arduino to read a matrix type keypad. 
+You can scavenge these keypads from old telephones or you can get them 
+from almost any electronics parts store for less than $5 USD. They come 
+in 3x4, 4x4 and various other configurations with words, letters and 
+numbers written on the keys. This library is capable of supporting all 
+of those.
+</p>
+<p class="vspace"></p><h3 style="text-align: center;"><a class="urllink" href="http://www.arduino.cc/playground/Code/Keypad#Download" rel="nofollow">Download latest</a><br>(This includes four example sketches.)</h3>
+<div style="text-align: center;"><img src="KeypadTutorial_files/16buttonkeypad.jpg" alt="" title=""></div>
+<p class="vspace"></p><hr>
+<h2><a name="Identify" id="Identify"></a>Identifying the keypad pins</h2>
+<p>First you need to get a piece of paper and draw the right hand 
+diagram as you see it below.  I've already written my pin numbers (1,2,3
+ across the bottom and 7,6,5,4 down the right side) which you can just 
+leave off of your drawing.  Next, you are going to use your Ohm meter to
+ find out which pins are connected to which keys.  The first thing to do
+ is count how many pins are on your keypad (as seen in the photo below.)
+  The photo is showing 14 pins though not all of the pins are used.  
+Don't worry, once you've completed this procedure you will know which 
+pins are unused and can be ignored.
+</p>
+<p class="vspace"></p><h3>Procedure</h3>
+<ol><li>Connect your Ohm meter leads to pins 1 and 2.
+</li><li>Press all the buttons until the meter indicates a closure.  
+</li><li>Write down the pin numbers next to the column and row for the 
+key you just found.  Example: Your meter is connected to pins 1 and 5. 
+When you pressed the number 7 your meter reacted.  Write 1 under <span class="wikiword">COL0</span> and 5 next to <span class="wikiword">ROW2</span>.
+</li><li>If the meter didn't react then move the meter lead from pin 2 to pin 3 and repeat steps 2 and 3 above.
+</li><li>Now, keep moving the lead to the next pin and repeat steps 2 and 3 for each pin.
+</li><li>Once you have reached the end move the first meter lead from 
+pin 1 to pin 2 and repeat steps 2 and 3 while connecting the second 
+meter lead to pins 3 through the highest pin.
+</li><li>Once you have completely identified all the pins on the diagram
+ then you can safely ignore any unused keypad pins.  You are now ready 
+to wire the keypad to your Arduino.
+</li></ol><p class="vspace"></p><div style="text-align: center;"><img src="KeypadTutorial_files/keypad_pin_diagram.png" alt="" title=""></div>
+<p class="vspace"></p><hr>
+<h2><a name="Notes" id="Notes"></a>Notes on using the library</h2>
+<ul><li>The library is non-blocking which means you can press and hold 
+the key all day long and your Arduino will continue processing the rest 
+of your code.
+<p class="vspace"></p></li><li>Consider, though, when you are writing 
+your code that every delay() you use will take processing time away from
+ the keypad. Something as short as delay(250) can make the keypad seem 
+very unresponsive.  And the same thing will happen if you sprinkle a 
+bunch of delay(10)'s all through your code.
+<p class="vspace"></p></li><li>The function getKey() returns a key value
+ as soon as you press the key but it does not repeat automatically.  
+Also, when you release the key you can track the key RELEASED event if 
+you are using the eventListener feature of the library.
+</li></ul><p class="vspace"></p><hr>
+<h2><a name="Example" id="Example"></a>Example</h2>
+<h3>&lt; Find more <a class="wikilink" href="http://arduino.cc/playground/Code/Keypad#Example">examples</a> on how to use the new library. &gt;</h3>
+<pre>/*  Keypadtest.pde
+ *
+ *  Demonstrate the simplest use of the  keypad library.
+ *
+ *  The first step is to connect your keypad to the
+ *  Arduino  using the pin numbers listed below in
+ *  rowPins[] and colPins[]. If you want to use different
+ *  pins then  you  can  change  the  numbers below to
+ *  match your setup.
+ *
+ */
+#include &lt;Keypad.h&gt;
+
+const byte ROWS = 4; // Four rows
+const byte COLS = 3; // Three columns
+// Define the Keymap
+char keys[ROWS][COLS] = {
+  {'1','2','3'},
+  {'4','5','6'},
+  {'7','8','9'},
+  {'#','0','*'}
+};
+// Connect keypad ROW0, ROW1, ROW2 and ROW3 to these Arduino pins.
+byte rowPins[ROWS] = { 9, 8, 7, 6 };
+// Connect keypad COL0, COL1 and COL2 to these Arduino pins.
+byte colPins[COLS] = { 12, 11, 10 }; 
+
+// Create the Keypad
+Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+
+#define ledpin 13
+
+void setup()
+{
+  digitalWrite(ledpin, HIGH);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  char key = kpd.getKey();
+  if(key)  // Check for a valid key.
+  {
+    switch (key)
+    {
+      case '*':
+        digitalWrite(ledpin, LOW);
+        break;
+      case '#':
+        digitalWrite(ledpin, HIGH);
+        break;
+      default:
+        Serial.println(key);
+    }
+  }
+}
+
+</pre>
+<p class="vspace"></p><hr>
+<h2><a name="Troubles" id="Troubles"></a>Troubleshooting</h2>
+<p><strong>1.</strong>  You can pretty much connect your keypad to any 
+pins you would like. Be careful not to use the serial pins (0 and 1) if 
+you are using them for communication.
+</p>
+<p class="vspace"></p><p><strong>2.</strong>  If key presses seem to 
+take a long time to show up then you are probably using long delay()'s 
+in your code. The same thing can happen if you use too many small 
+delay()s like delay(10).
+</p>
+<p class="vspace"></p><p><strong>3.</strong>  Make sure you understand 
+the pin mappings and have the keypad wired up to match. If you wired the
+ pins incorrectly (and already soldered them in) then you may be able to
+ fix it by redefining the pins and/or keymap to make your keypad work.
+</p>
+<p class="vspace"></p><hr>
+<h2><a name="Modifying" id="Modifying"></a>Modifying the library</h2>
+<p>The library supports user defined pins and keymaps so it should not 
+be necessary to change the library. If you do then you need to make sure
+ you save your files back to the proper folder under 
+\$ArduinoHome$\libraries\. You may also have to exit and restart the 
+Arduino IDE software for it to recognize any new files in your library's
+ folder.
+</p>
+<p class="vspace"></p><h2>More information on using and creating libraries</h2>
+<ul><li><a class="urllink" href="http://www.arduino.cc/en/Main/Libraries" rel="nofollow">http://www.arduino.cc/en/Main/Libraries</a>
+</li><li><a class="urllink" href="http://www.arduino.cc/en/Hacking/Libraries" rel="nofollow">http://www.arduino.cc/en/Hacking/Libraries</a>
+</li><li><a class="urllink" href="http://www.arduino.cc/en/Reference/Libraries" rel="nofollow">http://www.arduino.cc/en/Reference/Libraries</a>
+</li><li><a class="urllink" href="http://www.arduino.cc/playground/Code/Library" rel="nofollow">http://www.arduino.cc/playground/Code/Library</a>
+</li></ul>
+</div>
+
+
+<!-- AddThis Button BEGIN -->       
+<script type="text/javascript">var addthis_language = "en";      
+</script>       
+<div class="addthis_container addthis_toolbox addthis_default_style" addthis:url="http://arduino.cc/playground/Main/KeypadTutorial" addthis:title="Arduino Playground">
+<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=arduinoteam" class="addthis_button_compact at300m"><span class="at16nc at300bs at15nc at15t_compact at16t_compact"><span class="at_a11y">More Sharing Services</span></span>Share</a><span class="addthis_separator">|</span><a href="#" title="Email" class="addthis_button_email at300b"><span class="at16nc at300bs at15nc at15t_email at16t_email"><span class="at_a11y">Share on email</span></span></a><a href="#" title="Save to Favorites" class="addthis_button_favorites at300b"><span class="at16nc at300bs at15nc at15t_favorites at16t_favorites"><span class="at_a11y">Share on favorites</span></span></a><a href="#" title="Print" class="addthis_button_print at300b"><span class="at16nc at300bs at15nc at15t_print at16t_print"><span class="at_a11y">Share on print</span></span></a><a href="#" title="Send to Facebook" class="addthis_button_facebook at300b"><span class="at16nc at300bs at15nc at15t_facebook at16t_facebook"><span class="at_a11y">Share on facebook</span></span></a><a href="#" title="Tweet This" class="addthis_button_twitter at300b"><span class="at16nc at300bs at15nc at15t_twitter at16t_twitter"><span class="at_a11y">Share on twitter</span></span></a><script type="text/javascript" src="KeypadTutorial_files/addthis_widget.js"></script><div class="atclear"></div></div>       
+<!-- AddThis Button END -->       
+
+
+</div>
+<!--PageFooterFmt-->
+<div id="pagefooter">
+</div>
+<!--/PageFooterFmt-->
+</div>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ?
+"https://stats.arduino.cc/piwik/" : "http://stats.arduino.cc/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="KeypadTutorial_files/piwik.js" type="text/javascript"></script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img
+src="http://stats.arduino.cc/piwik/piwik.php?idsite=1" style="border:0"
+alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+
+
+
+</body></html>

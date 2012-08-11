@@ -1,0 +1,53 @@
+General:
+int pin(char*)
+//AT+CPIN
+
+int get_imei(char*)
+//AT+CGSN
+
+int set_time(char*)
+//AT+CCLK
+
+int get_time(char*)
+//AT+CCLK
+
+npi* network_status(void)
+//AT+COPS
+//AT+COPN
+
+int signal_quality(void)
+//AT+CSQ
+
+int send_dtmf(char)
+//AT+VTS
+
+Control de llamadas:
+int is_ringing(void)
+int is_hungup(void)
+int answer_call(void)
+//ATA
+
+int hangup(void) //creo que no es la misma que disconnect
+//AT+CHUP
+
+int dial(char*)
+//ATD
+
+int vol_up(void)
+//AT+CLVL
+
+int vol_down(void)
+//AT+CLVL
+
+Agenda(estas no las tengo muy claras, habra que probarlas con calma):
+npi* find_phonebook(char*)
+//AT+CPBF
+
+npi* read_phonebook(char*)
+//AT+CPBR
+
+npi* write_phonebook(char*)
+//AT+CPBW
+
+SMS:
+Yo dejaria los sms para lo ultimo, mas que nada por escribir los sms con el teclado de mierda.

@@ -1,0 +1,6 @@
+/**
+** Página de estilos creada por Óscar Abad para que los enlaces del menú de navegación en aquellas páginas que han sido redireccionadas, puedan ser marcados como activos con subrayado, fondo...etc.
+ */
+
+#nav li.nav-2 a { color:#fff !important; background:url(../images/menu_selected.png), 0px 0px ;}
+
